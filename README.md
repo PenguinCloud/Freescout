@@ -1,0 +1,3 @@
+# FreeScout
+
+The support platform!
