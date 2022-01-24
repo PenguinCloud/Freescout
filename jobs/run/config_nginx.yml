@@ -9,6 +9,7 @@
   template:
     src: templates/fastcgi_params.j2
     dest: /etc/nginx/fastcgi_params
+    force: yes
 
 - name: Remove default file /etc/nginx/sites-enabled/default
   file:
