@@ -12,9 +12,10 @@ organization:
   email: "{{ lookup('env', 'ORGANIZATION_EMAIL') }}"
   hostname: "{{ lookup('env', 'ORGANISATION_HOSTNAME') }}"
 
-admin:
-  logging: "{{ lookup('env', 'ADMIN_LOGGING') }}"
-  password: "{{ lookup('env', 'ADMIN_PASS') }}"
+redis:
+  host: "{{ lookup('env', 'REDIS_HOST') }}"
+  port: "{{ lookup('env', 'REDIS_PORT') }}"
+  password: "{{ lookup('env', 'REDIS_PASS') }}"
 
 url: "{{ lookup('env', 'URL') }}"
 

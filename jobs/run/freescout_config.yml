@@ -1,0 +1,10 @@
+---
+- name: Template freescout .env file
+  template:
+    src: templates/freescout_config.j2
+    dest: /opt/freescout-dist/.env
+
+- name: Generate app key frescout
+  command: php artisan key:generate
+  args:
+    chdir: /opt/freescout-dist
