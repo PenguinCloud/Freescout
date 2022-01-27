@@ -22,3 +22,15 @@ url: "{{ lookup('env', 'URL') }}"
 cpu_count: "{{ lookup('env', 'CPU_COUNT') }}"
 
 file_limit: "{{ lookup('env', 'FILE_LIMIT') }}"
+
+module_links:
+  - https://github.com/LJPc-solutions/freescout-calendar-module/archive/refs/heads/main.zip
+  - https://github.com/freescout-helpdesk/freescout/files/6068564/Darkmode.zip
+  - https://github.com/scout-devs/EnvatoIntegration/archive/refs/heads/master.zip
+  - https://github.com/Creative-Motion-Development/freemius-module/archive/refs/heads/master.zip
+  - https://github.com/bolsunovskyi/freescout-oauth/archive/refs/heads/master.zip
+  - https://github.com/vladaman/freescout-saml2/archive/refs/heads/main.zip
+  - https://github.com/fulldecent/freescout-sidebar-webhook/archive/refs/heads/main.zip
+  - https://github.com/passatgt/freescout-woocommerce/archive/refs/heads/main.zip
+  - https://scoutdevs.com/index.php?eddfile=597%3A448%3A1%3A0&ttl=1643353654&file=1&token=9d6df745a64e12362bde5d0283d775ab2de931049a37b0f9d24e8e578ddf89c1
+  - https://scoutdevs.com/index.php?eddfile=597%3A455%3A1%3A0&ttl=1643353654&file=1&token=545dbb926f03b01fa87017d9584cff6ddf27fd916836c72be5c8f3ef28a47b92

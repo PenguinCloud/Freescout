@@ -8,3 +8,7 @@
   command: php artisan key:generate
   args:
     chdir: /opt/freescout-dist
+
+
+
+

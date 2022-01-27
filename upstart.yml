@@ -29,6 +29,17 @@
         - freescout
         - build
 
+    - name: Install Modules
+      include_tasks:
+        file: jobs/build/install_modules.yml
+        apply:
+          tags:
+          - freescout_modules
+          - build
+      tags:
+      - freescout_modules
+      - build
+
     - name: Generate SSL certificate
       include_tasks:
         file: jobs/run/ssl_generate.yml
@@ -49,6 +60,19 @@
           - run
       tags:
       - nginx
+      - run
+
+    - name: Test database connectivity
+      include_tasks:
+        file: jobs/tests/database_test.yml
+        apply:
+          tags:
+          - database
+          - test
+          - run
+      tags:
+      - database
+      - test
       - run
 
     - name: Configure freescout
@@ -72,19 +96,6 @@
       tags:
         - nginx
         - run
-
-    - name: Test database connectivity
-      include_tasks:
-        file: jobs/tests/database_test.yml
-        apply:
-          tags:
-          - database
-          - test
-          - run
-      tags:
-      - database
-      - test
-      - run
 
     - name: Test Nginx
       include_tasks:
