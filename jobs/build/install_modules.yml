@@ -1,7 +1,0 @@
----
-- name: Install Freesout modules
-  ansible.builtin.unarchive:
-    src: "{{ item }}"
-    dest: /opt/freescout-dist/Modules
-    remote_src: yes
-  with_items: "{{ module_links }}"

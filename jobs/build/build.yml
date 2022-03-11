@@ -1,0 +1,31 @@
+---
+- name: Install Dependencies
+  apt:
+    pkg:
+    - nginx-core
+    - php
+    - php-mysqli
+    - php-mbstring
+    - php-xml
+    - php-imap
+    - php-json
+    - php-zip
+    - php-gd
+    - php-curl
+    - python-openssl
+    - python3-pymysql
+    state: latest
+    update_cache: yes
+
+- name: Download and extract Freescout
+  ansible.builtin.unarchive:
+    src: https://freescout.net/download/
+    dest: /opt/
+    remote_src: yes
+
+- name: Install Freesout modules
+  ansible.builtin.unarchive:
+    src: "{{ item }}"
+    dest: /opt/freescout-dist/Modules
+    remote_src: yes
+  with_items: "{{ module_links }}"
