@@ -23,7 +23,7 @@
     dest: /opt/
     remote_src: yes
 
-- name: Install Freesout modules
+- name: Install Freescout modules
   ansible.builtin.unarchive:
     src: "{{ item }}"
     dest: /opt/freescout-dist/Modules
