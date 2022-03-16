@@ -1,6 +1,0 @@
----
-- name: Download and extract Freescout
-  ansible.builtin.unarchive:
-    src: https://freescout.net/download/
-    dest: /opt/
-    remote_src: yes

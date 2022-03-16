@@ -42,7 +42,7 @@ services:
       - php-fpm
     networks:
       - freescout
-    restart: on-failure # Added this to give maria_db to configure for testing purposes
+    # restart: on-failure # Added this to give maria_db to configure for testing purposes
     healthcheck:
       test: ["CMD", "ansible-playbook", "upstart.yml", "--tag", "test"]
       interval: 5m
