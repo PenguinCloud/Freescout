@@ -6,6 +6,10 @@
     login_host: "{{ database.host }}"
     login_port: "{{ database.port }}"
     name: "{{ database.name }}"
+  register: db_result
+  until: db_result is succeeded
+  retries: 10
+  delay: 10
 
 - name: Test for running nginx
   shell: ps axuf|grep 'nginx'|grep -v "grep" | tr -d "\n" | cat

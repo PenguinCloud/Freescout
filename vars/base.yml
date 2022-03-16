@@ -32,3 +32,5 @@ module_links:
   - https://github.com/vladaman/freescout-saml2/archive/refs/heads/main.zip
   - https://github.com/fulldecent/freescout-sidebar-webhook/archive/refs/heads/main.zip
   - https://github.com/passatgt/freescout-woocommerce/archive/refs/heads/main.zip
+
+app_link: "{{ lookup('env', 'APP_LINK') }}"
