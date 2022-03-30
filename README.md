@@ -6,11 +6,11 @@ FreeScout is the super lightweight and powerful free open source help desk and s
 This playbook is owned entirely by Penguinz Tech Group and is not meant for distribution outside of contractual agreement.
 
 ## Environment Variables
-DATABASE_NAME 
-DATABASE_USER
-DATABASE_PASSWORD
-DATABASE_HOST
-DATABASE_PORT
+DATABASE_NAME_
+DATABASE_USER_
+DATABASE_PASSWORD_
+DATABASE_HOST_
+DATABASE_PORT_
 ORGANIZATION_NAME 
 ORGANIZATION_COUNTRY
 ORGANIZATION_EMAIL
