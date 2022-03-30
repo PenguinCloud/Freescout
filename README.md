@@ -21,4 +21,6 @@ REDIS_PASS\
 URL\
 CPU_COUNT\
 FILE_LIMIT\
-APP_LINK\
+APP_LINK
+
+### Please ensure the server has docker installed
