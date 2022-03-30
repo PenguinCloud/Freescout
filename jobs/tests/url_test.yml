@@ -1,0 +1,8 @@
+---
+- name: Check that Freescout runs
+  uri:
+    url: "{{ url }}"
+    status_code: [200, 202]
+    validate_certs: no
+    register: url_result
+    failed_when: "'FAILED' in url_result.stderr"

@@ -1,0 +1,15 @@
+---
+- name: Test for running nginx
+  shell: ps axuf|grep 'nginx'|grep -v "grep" | tr -d "\n" | cat
+  register: nginx_result
+  failed_when: "'FAILED' in nginx_result.stderr"
+
+- name: Test service on port 80
+  shell: netstat -tunlp | grep ":80 " | sed -e 's/.*\///'
+  register: port80_result
+  failed_when: "'FAILED' in port80_result.stderr"
+
+- name: Test service on port 443
+  shell: netstat -tunlp | grep ":443 " | sed -e 's/.*\///'
+  register: port443_result
+  failed_when: "'FAILED' in port443_result.stderr"
