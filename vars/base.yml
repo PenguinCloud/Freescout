@@ -23,6 +23,10 @@ cpu_count: "{{ lookup('env', 'CPU_COUNT') }}"
 
 file_limit: "{{ lookup('env', 'FILE_LIMIT') }}"
 
+ssl_key: "{{ lookup('env', 'SSL_KEY') }}"
+ssl_cert: "{{ lookup('env', 'SSL_CERTIFICATE') }}"
+
+
 module_links:
   - https://github.com/LJPc-solutions/freescout-calendar-module/archive/refs/heads/main.zip
   - https://github.com/freescout-helpdesk/freescout/files/6068564/Darkmode.zip
@@ -34,3 +38,7 @@ module_links:
   - https://github.com/passatgt/freescout-woocommerce/archive/refs/heads/main.zip
 
 app_link: "{{ lookup('env', 'APP_LINK') }}"
+
+ports:
+  - 80
+  - 443
