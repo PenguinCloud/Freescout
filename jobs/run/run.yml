@@ -9,7 +9,7 @@
 
 - name: Configure Freescout
   include_tasks:
-    file: jobs/run/nginx_config.yml
+    file: jobs/run/config_freescout.yml
 
 - name: Run Nginx
   include_tasks:

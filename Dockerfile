@@ -16,6 +16,8 @@ ENV REDIS_PASS="paswword123"
 ENV URL="https://127.0.0.1"
 ENV CPU_COUNT="2"
 ENV FILE_LIMIT="1042"
+ENV SSL_KEY="nokey"
+ENV SSL_CERTIFICATE="nocert"
 ARG APP_LINK="https://freescout.net/download/"
 RUN ansible-playbook /opt/manager/upstart.yml -c local --tags build
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \
