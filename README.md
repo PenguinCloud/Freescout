@@ -23,6 +23,6 @@ CPU_COUNT\
 FILE_LIMIT\
 APP_LINK\
 SSL_KEY\
-SSL_CERTIFICATE\
+SSL_CERTIFICATE
 
 ### Please ensure the server has docker installed
