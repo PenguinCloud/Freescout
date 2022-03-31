@@ -34,3 +34,7 @@ module_links:
   - https://github.com/passatgt/freescout-woocommerce/archive/refs/heads/main.zip
 
 app_link: "{{ lookup('env', 'APP_LINK') }}"
+
+ports:
+  - 80
+  - 443
