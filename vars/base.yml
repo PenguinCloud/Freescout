@@ -1,0 +1,44 @@
+---
+database:
+  name: "{{ lookup('env', 'DATABASE_NAME') }}"
+  user: "{{ lookup('env', 'DATABASE_USER') }}"
+  password: "{{ lookup('env', 'DATABASE_PASSWORD') }}"
+  host: "{{ lookup('env', 'DATABASE_HOST') }}"
+  port: "{{ lookup('env', 'DATABASE_PORT') }}"
+
+organization:
+  name: "{{ lookup('env', 'ORGANIZATION_NAME') }}"
+  country: "{{ lookup('env', 'ORGANIZATION_COUNTRY') }}"
+  email: "{{ lookup('env', 'ORGANIZATION_EMAIL') }}"
+  hostname: "{{ lookup('env', 'ORGANISATION_HOSTNAME') }}"
+
+redis:
+  host: "{{ lookup('env', 'REDIS_HOST') }}"
+  port: "{{ lookup('env', 'REDIS_PORT') }}"
+  password: "{{ lookup('env', 'REDIS_PASS') }}"
+
+url: "{{ lookup('env', 'URL') }}"
+
+cpu_count: "{{ lookup('env', 'CPU_COUNT') }}"
+
+file_limit: "{{ lookup('env', 'FILE_LIMIT') }}"
+
+ssl_key: "{{ lookup('env', 'SSL_KEY') }}"
+ssl_cert: "{{ lookup('env', 'SSL_CERTIFICATE') }}"
+
+
+module_links:
+  - https://github.com/LJPc-solutions/freescout-calendar-module/archive/refs/heads/main.zip
+  - https://github.com/freescout-helpdesk/freescout/files/6068564/Darkmode.zip
+  - https://github.com/scout-devs/EnvatoIntegration/archive/refs/heads/master.zip
+  - https://github.com/Creative-Motion-Development/freemius-module/archive/refs/heads/master.zip
+  - https://github.com/bolsunovskyi/freescout-oauth/archive/refs/heads/master.zip
+  - https://github.com/vladaman/freescout-saml2/archive/refs/heads/main.zip
+  - https://github.com/fulldecent/freescout-sidebar-webhook/archive/refs/heads/main.zip
+  - https://github.com/passatgt/freescout-woocommerce/archive/refs/heads/main.zip
+
+app_link: "{{ lookup('env', 'APP_LINK') }}"
+
+ports:
+  - 80
+  - 443

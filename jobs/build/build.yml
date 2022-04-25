@@ -1,0 +1,12 @@
+---
+- name: Install Freescout Dependencies
+  include_tasks:
+    file: jobs/build/install_dependencies.yml
+
+- name: Download and extract Freescout
+  include_tasks:
+    file: jobs/build/download_app.yml
+
+- name: Download and extract apps
+  include_tasks:
+    file: jobs/build/install_modules.yml

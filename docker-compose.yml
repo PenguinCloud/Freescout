@@ -1,0 +1,53 @@
+---
+version: "2.4"
+services:
+  mariadb:
+    image: 'bitnami/mariadb:latest'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - MARIADB_PASSWORD=p@ssword
+      - MARIADB_DATABASE=freescout
+      - MARIADB_USER=freescout
+    ports:
+      - "3306:3306"
+    networks:
+      - freescout
+
+  redis:
+    image: 'bitnami/redis:latest'
+    environment:
+      - REDIS_PASSWORD=password123
+    ports:
+      - "6379:6379"
+    networks:
+      - freescout
+
+  php-fpm:
+    image: 'bitnami/php-fpm:latest'
+    ports:
+      - "9000:9000"
+    networks:
+      - freescout
+
+  freescout-server:
+    build: .
+    environment:
+      - DATABASE_HOST=mariadb
+      - URL=https://127.0.0.1
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - mariadb
+      - php-fpm
+    networks:
+      - freescout
+    healthcheck:
+      test: ["CMD", "ansible-playbook", "upstart.yml", "--tag", "test"]
+      interval: 5m
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+networks:
+  freescout:
