@@ -1,17 +1,22 @@
 ---
+- name: Add php repo
+  apt_repository:
+    repo: ppa:ondrej/php
+    state: present
+
 - name: Install Dependencies
   apt:
     pkg:
-    - nginx-core
-    - php
-    - php-mysqli
-    - php-mbstring
-    - php-xml
-    - php-imap
-    - php-json
-    - php-zip
-    - php-gd
-    - php-curl
+    - nginx
+    - php8.0
+    - php8.0-mysql
+    - php8.0-fpm
+    - php8.0-mbstring
+    - php8.0-xml
+    - php8.0-imap
+    - php8.0-zip
+    - php8.0-gd
+    - php8.0-curl
     - python-openssl
     - python3-pymysql
     state: latest
