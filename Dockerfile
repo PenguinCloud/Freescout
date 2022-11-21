@@ -36,7 +36,6 @@ ENV FILE_LIMIT="1042"
 ENV SSL_KEY="nokey"
 ENV SSL_CERTIFICATE="nocert"
 
-
 # Switch to non-root user
 USER ptg-user
 
