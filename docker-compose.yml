@@ -22,28 +22,21 @@ services:
     networks:
       - freescout
 
-  php-fpm:
-    image: 'bitnami/php-fpm:latest'
-    ports:
-      - "9000:9000"
-    networks:
-      - freescout
-
   freescout-server:
     build: .
     environment:
       - DATABASE_HOST=mariadb
       - URL=https://127.0.0.1
     ports:
-      - "80:80"
-      - "443:443"
+      - "8080:8080"
+      - "8443:8443"
     depends_on:
       - mariadb
-      - php-fpm
+      - redis
     networks:
       - freescout
     healthcheck:
-      test: ["CMD", "ansible-playbook", "upstart.yml", "--tag", "test"]
+      test: ["CMD", "ansible-playbook", "oldupstart.yml", "--tag", "test"]
       interval: 5m
       timeout: 10s
       retries: 3
