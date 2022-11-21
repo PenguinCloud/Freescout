@@ -22,7 +22,8 @@ services:
     networks:
       - freescout
 
-  freescout-server:
+  app:
+    image: penguintech/freescout
     build: .
     environment:
       - DATABASE_HOST=mariadb
