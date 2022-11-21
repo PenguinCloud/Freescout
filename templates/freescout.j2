@@ -9,7 +9,7 @@ server {
     index index.php index.html index.htm;
 
     error_log /var/log/nginx/freescout.error;
-    access_log /var/log/nginx/freescout.access
+    access_log /var/log/nginx/freescout.access;
 
     location / {
         try_files $uri $uri/ /index.php?$query_string;
