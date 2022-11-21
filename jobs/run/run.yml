@@ -11,9 +11,9 @@
   include_tasks:
     file: phpfpm_config.yml
 
-- name: Configure Freescout
-  include_tasks:
-    file: config_freescout.yml
+# - name: Configure Freescout
+#  include_tasks:
+#    file: config_freescout.yml
 
 #- name: Run Nginx
 #  include_tasks:
