@@ -1,8 +1,8 @@
 ---
-- name: Generate open SSl certificate
-  include_tasks:
-    file: jobs/run/ssl_generate.yml
-
+#- name: Generate open SSl certificate
+#  include_tasks:
+#    file: jobs/run/ssl_generate.yml
+#
 - name: Configure Nginx
   include_tasks:
     file: jobs/run/nginx_config.yml
@@ -11,6 +11,6 @@
   include_tasks:
     file: jobs/run/config_freescout.yml
 
-- name: Run Nginx
-  include_tasks:
-    file: jobs/run/nginx.yml
+#- name: Run Nginx
+#  include_tasks:
+#    file: jobs/run/nginx.yml

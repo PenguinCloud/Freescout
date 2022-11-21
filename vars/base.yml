@@ -1,4 +1,11 @@
 ---
+run:
+  user: ptg-user
+
+app:
+  title: "{{ lookup('ansible.builtin.env', 'APP_TILE') }}"
+  link: "{{ lookup('env', 'APP_LINK') }}"
+
 database:
   name: "{{ lookup('env', 'DATABASE_NAME') }}"
   user: "{{ lookup('env', 'DATABASE_USER') }}"
