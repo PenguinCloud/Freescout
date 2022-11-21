@@ -6,7 +6,6 @@
     recurse: yes
     owner: "{{ run.user }}"
     group: "{{ run.user }}"
-    mode: '755'
 
 - name: Recursively change ownership of /run/nginx
   ansible.builtin.file:
