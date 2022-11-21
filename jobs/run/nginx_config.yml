@@ -1,5 +1,4 @@
 ---
----
 - name: Configure nginx .conf
   template:
     src: /opt/manager/templates/nginx.j2
