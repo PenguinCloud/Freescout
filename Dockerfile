@@ -21,7 +21,7 @@ RUN ansible-playbook build.yml -c local
 ENV DATABASE_NAME="freescout"
 ENV DATABASE_USER="freescout"
 ENV DATABASE_PASSWORD="p@ssword"
-ENV DATABASE_HOST="localhost"
+ENV DATABASE_HOST="mariadb"
 ENV DATABASE_PORT="3306"
 ENV ORGANIZATION_NAME="name"
 ENV ORGANIZATION_COUNTRY="US"

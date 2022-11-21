@@ -2,13 +2,14 @@ server {
     listen 80;
     listen [::]:80;
 
-    server_name example.com www.example.com;
+    server_name localhost;
 
-    root /var/www/html/public;
+    root freescout-dist/public;
 
     index index.php index.html index.htm;
 
-    error_log /var/www/html/storage/logs/web-server.log;
+    error_log /var/log/nginx/freescout.error;
+    access_log /var/log/nginx/freescout.access
 
     location / {
         try_files $uri $uri/ /index.php?$query_string;
