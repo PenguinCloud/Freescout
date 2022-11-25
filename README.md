@@ -1,7 +1,6 @@
-# SuiteCRM
+# Freescout
 
->> SuiteCRM is an open source Customer Relationship Management (CRM) software solution that provides a 360-degree view of your customers and business.
-> Making it easy for your Sales, Marketing and Customer Service departments to discover key information that will help you grow, retain and delight your customers.
+>> FreeScout is the perfect help desk solution for those who need to provide a professional customer support, but who can not afford to pay for Zendesk or Help Scout. FreeScout is a pure open source PHP/MySQL application, so it can be easily deployed even on a shared hosting.
  
  
 # Why this image vs others
