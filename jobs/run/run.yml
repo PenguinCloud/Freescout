@@ -11,10 +11,12 @@
   include_tasks:
     file: phpfpm_config.yml
 
-# - name: Configure Freescout
-#  include_tasks:
-#    file: config_freescout.yml
+# I put this in here to make sure the database has started properly
+- name: Run database test
+  include_tasks:
+    file: jobs/tests/database_test.yml
 
-#- name: Run Nginx
-#  include_tasks:
-#    file: jobs/run/nginx.yml
+- name: Configure Freescout
+  include_tasks:
+    file: config_freescout.yml
+

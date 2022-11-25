@@ -13,27 +13,14 @@ services:
     networks:
       - freescout
 
-  redis:
-    image: 'bitnami/redis:latest'
-    environment:
-      - REDIS_PASSWORD=password123
-    ports:
-      - "6379:6379"
-    networks:
-      - freescout
-
   app:
     image: penguintech/freescout
     build: .
-    environment:
-      - DATABASE_HOST=mariadb
-      - URL=https://127.0.0.1
     ports:
       - "8080:8080"
       - "8443:8443"
     depends_on:
       - mariadb
-      - redis
     networks:
       - freescout
     healthcheck:

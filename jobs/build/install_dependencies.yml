@@ -21,3 +21,7 @@
     - python3-pymysql
     state: latest
     update_cache: yes
+
+- name: Install pexpect python package
+  ansible.builtin.pip:
+    name: pexpect
