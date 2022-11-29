@@ -1,16 +1,22 @@
 ---
-- name: Generate open SSl certificate
-  include_tasks:
-    file: jobs/run/ssl_generate.yml
-
+#- name: Generate open SSl certificate
+#  include_tasks:
+#    file: jobs/run/ssl_generate.yml
+#
 - name: Configure Nginx
   include_tasks:
-    file: jobs/run/nginx_config.yml
+    file: nginx_config.yml
+
+- name: Configure phpfpm
+  include_tasks:
+    file: phpfpm_config.yml
+
+# I put this in here to make sure the database has started properly
+- name: Run database test
+  include_tasks:
+    file: jobs/tests/database_test.yml
 
 - name: Configure Freescout
   include_tasks:
-    file: jobs/run/config_freescout.yml
+    file: config_freescout.yml
 
-- name: Run Nginx
-  include_tasks:
-    file: jobs/run/nginx.yml

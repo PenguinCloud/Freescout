@@ -10,10 +10,10 @@
 APP_URL={{ url }}
 
 # Use HTTPS protocol and redirect to HTTPS
-APP_FORCE_HTTPS=true
+# APP_FORCE_HTTPS=true
 
 # If you are using HTTPS, feel free to uncomment this line to improve security
-SESSION_SECURE_COOKIE=true
+# SESSION_SECURE_COOKIE=true
 
 # Timezones: https://github.com/freescout-helpdesk/freescout/wiki/PHP-Timezones
 # Comment it to use default timezone from php.ini
@@ -27,13 +27,9 @@ DB_USERNAME={{ database.user }}
 # Maximum password length is 50 characters
 DB_PASSWORD={{ database.password }}
 
-REDIS_HOST={{ redis.host }}
-REDIS_PASSWORD={{ redis.password }}
-REDIS_PORT={{ redis.port }}
-
 # Run the following console command to generate the key: php artisan key:generate
 # Otherwise application will show the following error: "Whoops, looks like something went wrong"
-APP_KEY=
+# APP_KEY=
 
 # Uncomment to see errors in your browser, don't forget to comment it back when debugging finished
 #APP_DEBUG=true

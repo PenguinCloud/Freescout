@@ -1,5 +1,5 @@
 - name: Download and extract Freescout
   ansible.builtin.unarchive:
-    src: "{{ app_link }}"
+    src: "{{ app.link }}"
     dest: /opt/
     remote_src: yes
