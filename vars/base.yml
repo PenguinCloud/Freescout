@@ -29,8 +29,6 @@ ssl_cert: "{{ lookup('env', 'SSL_CERTIFICATE') }}"
 module_links:
   - https://github.com/LJPc-solutions/freescout-calendar-module/archive/refs/heads/main.zip
   - https://github.com/freescout-helpdesk/freescout/files/6068564/Darkmode.zip
-  - https://freescout.shop/index.php?eddfile=1779%3A1714%3A1&ttl=1669449845&file=1&token=7e6ba0a845b15de6a4c8df5a3548251d14651cc10a7a85bcda4588a511bd4afd
-  - https://freescout.shop/index.php?eddfile=1780%3A1098%3A2&ttl=1669449938&file=2&token=5248f83f5a9655cc2d1d300b5a8f8a44d415d891a70c6dece699f0e73409a94a
 
 app_link: "{{ lookup('env', 'APP_LINK') }}"
 
