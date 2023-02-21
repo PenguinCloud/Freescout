@@ -17,7 +17,6 @@ organization:
   name: "{{ lookup('env', 'ORGANIZATION_NAME') }}"
   country: "{{ lookup('env', 'ORGANIZATION_COUNTRY') }}"
   email: "{{ lookup('env', 'ORGANIZATION_EMAIL') }}"
-  hostname: "{{ lookup('env', 'ORGANISATION_HOSTNAME') }}"
 
 url: "{{ lookup('env', 'URL') }}"
 
