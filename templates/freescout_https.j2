@@ -1,8 +1,15 @@
 server {
-    listen 8080;
-    listen [::]:8080;
+    listen {{ ports.http }} default_server;
+    listen [::]:{{ ports.http }} default_server;
+    return 301 https://$host$request_uri;
+}
 
-    server_name localhost;
+server {
+    listen {{ ports.https }} ssl http2;
+    listen [::]:{{ ports.https }} ssl http2;
+    server_name {{ server_address }};
+    ssl_certificate {{ ssl_cert }};
+    ssl_certificate_key {{ ssl_key }};
 
     root /opt/freescout-dist/public;
 
@@ -14,12 +21,12 @@ server {
     location / {
         try_files $uri $uri/ /index.php?$query_string;
     }
-    location ~ \.php$ {
-	fastcgi_split_path_info ^(.+\.php)(/.+)$;
-	fastcgi_pass unix:/run/php/php8.0-fpm.sock;
-	fastcgi_index index.php;
-	fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-	include fastcgi_params;
+        location ~ \.php$ {
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass unix:/run/php/php8.0-fpm.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
     }
     # Uncomment this location if you want to improve attachments downloading speed.
     # Also make sure to set APP_DOWNLOAD_ATTACHMENTS_VIA=nginx in the .env file.

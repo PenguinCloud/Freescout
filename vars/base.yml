@@ -23,8 +23,11 @@ url: "{{ lookup('env', 'URL') }}"
 
 file_limit: "{{ lookup('env', 'FILE_LIMIT') }}"
 
-ssl_key: "{{ lookup('env', 'SSL_KEY') }}"
-ssl_cert: "{{ lookup('env', 'SSL_CERTIFICATE') }}"
+server_address: "{{ lookup('env', 'SERVER_ADDRESS') }}"
+
+ssl_cert: "{{ lookup('env', 'SSL_CERT') }}"
+
+protocol: "{{ lookup('env', 'PROTOCOL') }}"
 
 module_links:
   - https://github.com/LJPc-solutions/freescout-calendar-module/archive/refs/heads/main.zip
@@ -37,3 +40,11 @@ admin:
   lastname: "{{ lookup('env', 'ADMIN_LASTNAME') }}"
   email: "{{ lookup('env', 'ADMIN_EMAIL') }}"
   password: "{{ lookup('env', 'ADMIN_PASSWORD') }}"
+
+ports:
+  http: "{{ lookup('env', 'HTTP_PORT') }}"
+  https: "{{ lookup('env', 'HTTPS_PORT') }}"
+
+ports_test:
+  - 8080
+  - 8443
