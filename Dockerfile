@@ -42,7 +42,9 @@ ENV ADMIN_PASSWORD="pass"
 # Switch to non-root user
 USER ptg-user
 
-EXPOSE 8080 8443
+RUN ln -sf /dev/stdout /var/log/nginx/access.log \
+	&& ln -sf /dev/stderr /var/log/nginx/error.log
+
 
 # Entrypoint time (aka runtime)
 ENTRYPOINT ["/bin/bash","/opt/manager/entrypoint.sh"]
