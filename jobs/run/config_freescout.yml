@@ -4,6 +4,28 @@
     dest: /opt/freescout-dist/.env
 
 - name: Generate app key frescout
-  command: php artisan key:generate
-  args:
+  shell:
     chdir: /opt/freescout-dist
+    cmd: php artisan key:generate
+
+- name: Create a symbolic link from "public/storage" to "storage/app/public"
+  shell:
+    chdir: /opt/freescout-dist
+    cmd: php artisan storage:link
+
+- name: Run command to create tables
+  shell:
+    chdir: /opt/freescout-dist
+    cmd: php artisan migrate --force
+
+- name: Run command to create admin user
+  shell:
+    chdir: /opt/freescout-dist
+    cmd: >
+      php artisan freescout:create-user
+      --role=admin
+      --firstName="{{ admin.name }}"
+      --lastName="{{ admin.lastname }}"
+      --email="{{ admin.email }}"
+      --password={{ admin.password}}
+      -n

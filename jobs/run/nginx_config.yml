@@ -1,22 +1,23 @@
 ---
-- name: Template nginx config file to /etc/nginx/nginx.conf
+- name: Configure nginx .conf
   template:
-    src: templates/nginx.j2
+    src: /opt/manager/templates/nginx.j2
     dest: /etc/nginx/nginx.conf
     force: yes
 
-- name: Template fastcgi_params file to /etc/nginx/fastcgi_params
+- name: Configure nginx weberver
   template:
-    src: templates/fastcgi_params.j2
-    dest: /etc/nginx/fastcgi_params
+    src: /opt/manager/templates/freescout_http.j2
+    dest: /etc/nginx/conf.d/freescout_http.conf
+  when: protocol == "http"
+
+- name: Configure nginx https webserver
+  template:
+    src: /opt/manager/templates/freescout_https.j2
+    dest: /etc/nginx/conf.d/freescout_https.conf
     force: yes
+  when: protocol == "https"
 
-- name: Remove default file /etc/nginx/sites-enabled/default
-  file:
-    path: /etc/nginx/sites-enabled/default
-    state: absent
 
-- name: Template a file to etc/nginx/sites-enabled
-  template:
-    src: templates/freescout.j2
-    dest: /etc/nginx/sites-enabled/"{{ organization.hostname }}"
+
+

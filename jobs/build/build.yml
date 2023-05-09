@@ -1,12 +1,24 @@
 ---
 - name: Install Freescout Dependencies
   include_tasks:
-    file: jobs/build/install_dependencies.yml
+    file: install_dependencies.yml
 
 - name: Download and extract Freescout
   include_tasks:
-    file: jobs/build/download_app.yml
+    file: download_app.yml
 
 - name: Download and extract apps
   include_tasks:
-    file: jobs/build/install_modules.yml
+    file: install_modules.yml
+
+- name: Set file permissions for nginx
+  include_tasks:
+    file: permissions_nginx.yml
+
+- name: Set file permissions for phpfpm
+  include_tasks:
+    file: permissions_phpfpm.yml
+
+- name: Create certificate directories for open ssl
+  include_tasks:
+    file: create_cert_directories.yml
